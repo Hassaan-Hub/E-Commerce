@@ -11,9 +11,6 @@ const Cards = ({ children }) => {
 
   const navigate = useNavigate();
 
-  const navigateFunc = ()=>{
-    navigate('/cardDetail')
-  }
 
   return (
     <div className='flex flex-wrap justify-evenly mt-5'>
@@ -37,7 +34,7 @@ const Cards = ({ children }) => {
             <CardActions className='absolute bottom-2 '>
               <Button variant="contained" className='cart-btn'>Add to Cart</Button>
               <Button variant="outlined" onClick={()=>{
-                navigateFunc();
+                navigate(`/cardDetail/${val.id}`);
               }} className='detail-btn'>View Details</Button>
             </CardActions>
           </Card>

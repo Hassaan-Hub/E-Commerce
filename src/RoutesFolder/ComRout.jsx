@@ -8,7 +8,7 @@ const ComRout = () => {
     <div>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/cardDetail' element={<CardDetail />} />
+        <Route path='/cardDetail/:id' element={<CardDetail />} />
       </Routes>
     </div>
   )
