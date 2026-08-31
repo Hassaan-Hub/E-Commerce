@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import CardDetail from '../Components/CardsFolder/CardDetail'
 import Home from '../Pages/Home'
+import NotFound from '../Pages/NotFound'
 
 const ComRout = () => {
   return (
@@ -9,6 +10,7 @@ const ComRout = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/cardDetail/:id' element={<CardDetail />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
   )

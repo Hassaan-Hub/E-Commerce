@@ -11,6 +11,7 @@ import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import { useTheme } from '@mui/material/styles';
+import NotFound from '../../Pages/NotFound';
 
 const CardDetail = ({ children }) => {
 
@@ -30,13 +31,7 @@ const CardDetail = ({ children }) => {
   if (!course) {
     return (
       <section className="not-found-inline">
-        <div className="container not-found-inline-inner">
-          <h1>Course Not Found</h1>
-          <p>The course you are looking for doesn't exist or has been removed.</p>
-          <button className="btn btn-primary" onClick={() => navigate("/")}>
-            Back to Courses
-          </button>
-        </div>
+        <NotFound />
       </section>
     );
   }
@@ -75,7 +70,7 @@ const CardDetail = ({ children }) => {
       <CardMedia
         component="img"
         sx={{ width: 151 }}
-        image="/static/images/cards/live-from-space.jpg"
+        image={course.image}
         alt="Live from space album cover"
       />
     </Card>
