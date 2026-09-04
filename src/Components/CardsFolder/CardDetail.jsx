@@ -45,26 +45,19 @@ const CardDetail = ({ children }) => {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h5">
-            Live From Space
+            {course.title}
           </Typography>
           <Typography
             variant="subtitle1"
             component="div"
             sx={{ color: 'text.secondary' }}
           >
-            Mac Miller
+            {course.price}
           </Typography>
         </CardContent>
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-          <IconButton aria-label="previous">
-            {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
-          </IconButton>
-          <IconButton aria-label="play/pause">
-            <PlayArrowIcon sx={{ height: 38, width: 38 }} />
-          </IconButton>
-          <IconButton aria-label="next">
-            {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-          </IconButton>
+         
+        
         </Box>
       </Box>
       <CardMedia

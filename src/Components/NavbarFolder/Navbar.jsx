@@ -11,15 +11,19 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 // import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { useSearchParams } from 'react-router-dom';
 // import AdbIcon from '@mui/icons-material/Adb';
 
 
-const pages = ['Home', '', ''];
+const pages = ['All', 'Electronics', 'Jewelery', 'men\'s clothing', 'women\'s clothing'];
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+    const [searchParams, setSearchParams] = useSearchParams();
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -39,7 +43,7 @@ function Navbar() {
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
-                <Toolbar disableGutters sx={{justifyContent: 'flex-end'}}>
+                <Toolbar disableGutters sx={{ justifyContent: 'flex-end' }}>
                     {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
                     <Typography
                         variant="h6"
@@ -116,7 +120,9 @@ function Navbar() {
                         {pages.map((page) => (
                             <Button
                                 key={page}
-                                onClick={handleCloseNavMenu}
+                                onClick={()=>{
+                                    setSearchParams({category: page.toLocaleLowerCase()})
+                                }}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {page}

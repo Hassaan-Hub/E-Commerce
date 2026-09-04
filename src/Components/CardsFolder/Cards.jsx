@@ -15,7 +15,7 @@ const Cards = ({ children }) => {
   return (
     <div className='flex flex-wrap justify-evenly mt-5'>
       {cardsData.data?.map((val, idx) => (
-          <Card key={val.id} sx={{ maxWidth: 300, paddingBottom: 6, position: "relative" }}>
+          <Card key={val.id} sx={{ maxWidth: 300, paddingBottom: 6, position: "relative", marginBottom: 5 }} className='card'>
             <CardMedia
               component="img"
               alt="green iguana"
