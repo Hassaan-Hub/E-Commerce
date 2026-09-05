@@ -4,7 +4,6 @@ import Navbar from "./Components/NavbarFolder/Navbar"
 function App() {
   return (
     <div>
-      <Navbar />
       <main>
         <ComRout />
       </main>
