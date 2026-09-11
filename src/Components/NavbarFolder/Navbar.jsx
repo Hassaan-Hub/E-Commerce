@@ -11,7 +11,11 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 // import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { useSearchParams } from 'react-router-dom';
+import Badge from '@mui/material/Badge';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useContext } from 'react';
+import { CartContext } from '../../Context/CartContextProvider';
 // import AdbIcon from '@mui/icons-material/Adb';
 
 
@@ -24,6 +28,8 @@ function Navbar() {
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
     const [searchParams, setSearchParams] = useSearchParams();
+    const navigate = useNavigate();
+    const { cartItems } = useContext(CartContext);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -130,6 +136,16 @@ function Navbar() {
                         ))}
                     </Box>
                     <Box sx={{ flexGrow: 0 }}>
+                        <IconButton
+                            size="large"
+                            aria-label="cart"
+                            color="inherit"
+                            onClick={() => navigate('/addtocart')}
+                        >
+                            <Badge badgeContent={cartItems.length} color="error">
+                                <ShoppingCartIcon />
+                            </Badge>
+                        </IconButton>
                         {/* <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />

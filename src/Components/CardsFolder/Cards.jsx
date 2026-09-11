@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import "./Cards.css"
 import { cardsContext } from '../../Context/CardsContextProvider';
+import { CartContext } from '../../Context/CartContextProvider';
 import { Button, Card, CardActions, CardContent, CardMedia, Rating, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../NavbarFolder/Navbar';
@@ -8,6 +9,7 @@ import Navbar from '../NavbarFolder/Navbar';
 const Cards = ({ children }) => {
 
   const { cardsData } = useContext(cardsContext)
+  const { addToCart } = useContext(CartContext)
 
   const navigate = useNavigate();
 
@@ -36,7 +38,7 @@ const Cards = ({ children }) => {
             <CardActions className='absolute bottom-2 '>
               <Button variant="contained" className='cart-btn'
                 onClick={() => {
-                  navigate(`/addtocart`);
+                  addToCart(val);
                 }}
               >Add to Cart</Button>
               <Button variant="outlined" onClick={() => {
