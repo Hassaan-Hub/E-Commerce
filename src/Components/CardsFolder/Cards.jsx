@@ -34,7 +34,11 @@ const Cards = ({ children }) => {
               <Rating className='absolute mt-5' name="read-only" value={val.rating.rate} readOnly />
             </CardContent>
             <CardActions className='absolute bottom-2 '>
-              <Button variant="contained" className='cart-btn'>Add to Cart</Button>
+              <Button variant="contained" className='cart-btn'
+                onClick={() => {
+                  navigate(`/addtocart`);
+                }}
+              >Add to Cart</Button>
               <Button variant="outlined" onClick={() => {
                 navigate(`/cardDetail/${val.id}`);
               }} className='detail-btn'>View Details</Button>
