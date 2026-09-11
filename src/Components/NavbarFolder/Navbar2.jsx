@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Navbar2() {
-
     const navigate = useNavigate();
 
     return (
