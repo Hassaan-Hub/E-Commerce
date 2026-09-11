@@ -30,7 +30,7 @@ function Navbar2() {
                             cursor: 'pointer'
                         }}
                         onClick={() => {
-                            navigate(-1)
+                            navigate("/")
                         }}
                     >
                         Back

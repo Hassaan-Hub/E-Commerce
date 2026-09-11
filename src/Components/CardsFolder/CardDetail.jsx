@@ -36,33 +36,34 @@ const CardDetail = ({ children }) => {
 
   return (
     <>
-    <Navbar2 />
-      <Card sx={{ display: 'flex' }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <CardContent sx={{ flex: '1 0 auto' }}>
-            <Typography component="div" variant="h5">
-              {course.title}
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              component="div"
-              sx={{ color: 'text.secondary' }}
-            >
-              {course.price}
-            </Typography>
-          </CardContent>
-          <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+      <Navbar2 />
+      <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 min-w-0">
+        <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, overflow: 'hidden' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, minWidth: 0 }}>
+            <CardContent sx={{ flex: '1 0 auto', minWidth: 0 }}>
+              <Typography component="div" variant="h5">
+                {course.title}
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                component="div"
+                sx={{ color: 'text.secondary' }}
+              >
+                {course.price}
+              </Typography>
+            </CardContent>
+            <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
 
-
+            </Box>
           </Box>
-        </Box>
-        <CardMedia
-          component="img"
-          sx={{ width: 151 }}
-          image={course.image}
-          alt="Live from space album cover"
-        />
-      </Card>
+          <CardMedia
+            component="img"
+            sx={{ width: { xs: '100%', sm: 151 }, height: { xs: 220, sm: 'auto' }, objectFit: 'contain' }}
+            image={course.image}
+            alt={course.title}
+          />
+        </Card>
+      </div>
     </>
   )
 }
