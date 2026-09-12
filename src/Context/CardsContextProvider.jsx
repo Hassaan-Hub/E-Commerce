@@ -16,7 +16,7 @@ const CardsContextProvider = (props) => {
         .then(response => {
           setCardsData(response)
         })
-        .then(data => console.log(data));
+        .catch(data => console.log(data));
     }
   }, [searchParams])
 
