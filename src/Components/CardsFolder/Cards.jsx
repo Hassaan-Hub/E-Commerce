@@ -17,7 +17,7 @@ const Cards = ({ children }) => {
   return (
     <div>
       <Navbar />
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-5 px-4 justify-items-center'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-25 px-4 justify-items-center'>
         {cardsData.data?.map((val, idx) => (
           <Card key={val.id} sx={{ width: '100%', maxWidth: 320, minWidth: 0, paddingBottom: 6, position: "relative" }} className='card'>
             <CardMedia

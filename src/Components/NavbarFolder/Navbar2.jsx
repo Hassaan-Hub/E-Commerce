@@ -12,7 +12,7 @@ function Navbar2() {
     const navigate = useNavigate();
 
     return (
-        <AppBar position="static">
+        <AppBar position="sticky">
             <Container maxWidth="xl">
                 <Toolbar disableGutters sx={{ justifyContent: 'flex-end' }}>
                     <Typography
@@ -21,7 +21,7 @@ function Navbar2() {
                         component="a"
                         sx={{
                             mr: 2,
-                            display: { xs: 'none', md: 'flex' },
+                            display: 'flex',
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.2rem',
@@ -33,7 +33,7 @@ function Navbar2() {
                             navigate("/")
                         }}
                     >
-                        Back
+                        Home
                     </Typography>
                 </Toolbar>
             </Container>

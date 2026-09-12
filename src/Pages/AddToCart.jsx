@@ -4,8 +4,8 @@ import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { useNavigate } from 'react-router-dom'
-import Navbar from '../Components/NavbarFolder/Navbar'
 import { CartContext } from '../Context/CartContextProvider'
+import Navbar2 from '../Components/NavbarFolder/Navbar2'
 
 const AddToCart = () => {
   const { cartItems, increase, decrease, removeFromCart } = useContext(CartContext)
@@ -15,7 +15,7 @@ const AddToCart = () => {
 
   return (
     <div className="min-w-0">
-      <Navbar />
+      <Navbar2 />
       <div className="w-full max-w-4xl mx-auto mt-6 px-4 min-w-0">
         <Typography variant="h4" gutterBottom>Your Cart</Typography>
         {cartItems.length === 0 ? (
